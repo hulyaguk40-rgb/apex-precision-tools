@@ -13,36 +13,331 @@
 --gray:#5b6b7a;
 --border:#dde5ee;
 --max:1200px;
+--shadow:0 10px 30px rgba(15,42,68,0.08);
 }
+
 *{box-sizing:border-box}
-body{margin:0;font-family:Inter,Arial,sans-serif;background:var(--light);color:#0f1c28;line-height:1.6}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+margin:0;
+font-family:Inter,Arial,sans-serif;
+background:var(--light);
+color:#0f1c28;
+line-height:1.6;
+}
+
 a{text-decoration:none;color:inherit}
-.container{width:min(var(--max),calc(100% - 40px));margin:auto}
-header{background:white;border-bottom:1px solid var(--border);position:sticky;top:0;z-index:10}
-.nav{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
-.logo{display:flex;align-items:center;gap:12px;font-weight:700;font-size:18px}
-.navlinks{display:flex;gap:28px;color:var(--gray);font-size:14px}
-.btn{padding:12px 18px;border-radius:30px;font-weight:600}
-.btn-primary{background:var(--blue);color:white}
-.hero{padding:80px 0}
-.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
-h1{font-size:54px;line-height:1.05;margin:0 0 20px}
-.hero p{font-size:18px;color:var(--gray);max-width:640px}
-.hero-buttons{margin-top:30px;display:flex;gap:14px}
-.card-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:50px}
-.card{background:white;border:1px solid var(--border);border-radius:16px;padding:26px}
-.card h3{margin:0 0 10px}
-.section{padding:70px 0}
-.section h2{font-size:36px;margin-bottom:10px}
-.section p{color:var(--gray);max-width:720px}
-.process{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:30px}
-.process div{background:white;padding:24px;border-radius:14px;border:1px solid var(--border)}
-.cta{background:linear-gradient(135deg,var(--blue),var(--navy));color:white;border-radius:24px;padding:50px;margin-top:60px}
-footer{margin-top:60px;padding:30px 0;border-top:1px solid var(--border);background:white;color:var(--gray)}
+
+img{
+max-width:100%;
+display:block;
+}
+
+.container{
+width:min(var(--max),calc(100% - 40px));
+margin:auto;
+}
+
+header{
+background:white;
+border-bottom:1px solid var(--border);
+position:sticky;
+top:0;
+z-index:10;
+backdrop-filter:blur(8px);
+}
+
+.nav{
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:18px 0;
+}
+
+.logo{
+display:flex;
+align-items:center;
+gap:12px;
+font-weight:700;
+font-size:18px;
+}
+
+.navlinks{
+display:flex;
+gap:28px;
+color:var(--gray);
+font-size:14px;
+}
+
+.navlinks a:hover{
+color:var(--blue);
+}
+
+.btn{
+display:inline-block;
+padding:12px 18px;
+border-radius:30px;
+font-weight:600;
+transition:all 0.25s ease;
+}
+
+.btn:hover{
+opacity:0.96;
+transform:translateY(-2px);
+}
+
+.btn-primary{
+background:var(--blue);
+color:white;
+box-shadow:0 8px 20px rgba(15,95,168,0.22);
+}
+
+.btn-secondary{
+border:1px solid var(--border);
+background:white;
+color:var(--navy);
+}
+
+.hero{
+padding:88px 0 60px;
+}
+
+.hero-grid{
+display:grid;
+grid-template-columns:1.1fr .9fr;
+gap:40px;
+align-items:center;
+}
+
+.eyebrow{
+display:inline-block;
+margin-bottom:16px;
+padding:8px 14px;
+background:#eaf2fb;
+color:var(--blue);
+border-radius:999px;
+font-size:13px;
+font-weight:700;
+letter-spacing:.2px;
+}
+
+h1{
+font-size:56px;
+line-height:1.02;
+margin:0 0 20px;
+max-width:760px;
+}
+
+.hero p{
+font-size:18px;
+color:var(--gray);
+max-width:640px;
+}
+
+.hero-buttons{
+margin-top:30px;
+display:flex;
+gap:14px;
+flex-wrap:wrap;
+}
+
+.hero-image{
+border-radius:20px;
+overflow:hidden;
+box-shadow:var(--shadow);
+border:1px solid var(--border);
+}
+
+.hero-stats{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:16px;
+margin-top:28px;
+}
+
+.stat{
+background:white;
+border:1px solid var(--border);
+border-radius:16px;
+padding:18px;
+box-shadow:var(--shadow);
+}
+
+.stat strong{
+display:block;
+font-size:22px;
+color:var(--navy);
+margin-bottom:4px;
+}
+
+.card-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:24px;
+margin-top:34px;
+}
+
+.card{
+background:white;
+border:1px solid var(--border);
+border-radius:16px;
+padding:26px;
+transition:all 0.25s ease;
+box-shadow:0 4px 12px rgba(15,42,68,0.03);
+}
+
+.card:hover{
+transform:translateY(-4px);
+box-shadow:var(--shadow);
+}
+
+.card h3{
+margin:0 0 10px;
+font-size:22px;
+color:var(--navy);
+}
+
+.card p{
+margin:0;
+color:var(--gray);
+}
+
+.section{
+padding:76px 0;
+}
+
+.section h2{
+font-size:38px;
+margin:0 0 10px;
+color:var(--navy);
+}
+
+.section-intro{
+color:var(--gray);
+max-width:760px;
+}
+
+.process{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:20px;
+margin-top:30px;
+}
+
+.process div{
+background:white;
+padding:24px;
+border-radius:14px;
+border:1px solid var(--border);
+box-shadow:0 4px 12px rgba(15,42,68,0.03);
+}
+
+.process h4{
+margin:0 0 10px;
+font-size:18px;
+color:var(--navy);
+}
+
+.process p{
+margin:0;
+color:var(--gray);
+}
+
+.feature-list{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:18px;
+margin-top:26px;
+}
+
+.feature-item{
+background:white;
+border:1px solid var(--border);
+padding:20px;
+border-radius:14px;
+box-shadow:0 4px 12px rgba(15,42,68,0.03);
+}
+
+.feature-item h4{
+margin:0 0 8px;
+color:var(--navy);
+}
+
+.feature-item p{
+margin:0;
+color:var(--gray);
+}
+
+.cta{
+background:linear-gradient(135deg,var(--blue),var(--navy));
+color:white;
+border-radius:24px;
+padding:50px;
+margin-top:50px;
+box-shadow:var(--shadow);
+}
+
+.cta h2{
+color:white;
+margin-bottom:10px;
+}
+
+.cta p{
+color:rgba(255,255,255,0.9);
+max-width:700px;
+}
+
+footer{
+margin-top:60px;
+padding:40px 0;
+border-top:1px solid var(--border);
+background:white;
+color:var(--gray);
+}
+
+.footer-grid{
+display:grid;
+grid-template-columns:1.2fr .8fr .8fr;
+gap:24px;
+}
+
+.footer-title{
+font-weight:700;
+font-size:18px;
+color:var(--navy);
+margin-bottom:10px;
+}
+
+.small{
+font-size:14px;
+color:var(--gray);
+}
+
 @media(max-width:900px){
-.hero-grid,.card-grid,.process{grid-template-columns:1fr}
-h1{font-size:40px}
-.navlinks{display:none}
+.hero-grid,
+.card-grid,
+.process,
+.feature-list,
+.footer-grid,
+.hero-stats{
+grid-template-columns:1fr;
+}
+
+h1{
+font-size:40px;
+}
+
+.navlinks{
+display:none;
+}
+
+.hero{
+padding-top:60px;
+}
 }
 </style>
 </head>
@@ -51,18 +346,19 @@ h1{font-size:40px}
 <header>
 <div class="container nav">
 <div class="logo">
-<svg width="42" height="42" viewBox="0 0 100 100">
+<svg width="42" height="42" viewBox="0 0 100 100" aria-hidden="true">
 <polygon points="50,5 95,95 5,95" fill="#0f5fa8"/>
 <polygon points="50,30 72,80 28,80" fill="#00a6a6"/>
 </svg>
 <div>
 <div>Apex Precision Tools</div>
-<div style="font-size:12px;color:#5b6b7a">Engineering & Medical Instrumentation</div>
+<div style="font-size:12px;color:#5b6b7a">Engineering & Medical Device Support</div>
 </div>
 </div>
 
 <div class="navlinks">
 <a href="#top">Home</a>
+<a href="#capabilities">Capabilities</a>
 <a href="#solutions">Solutions</a>
 <a href="#process">Process</a>
 <a href="#industries">Industries</a>
@@ -76,19 +372,35 @@ h1{font-size:40px}
 <section class="hero" id="top">
 <div class="container hero-grid">
 <div>
-<h1>Precision Tools for Engineering and Medical Innovation</h1>
+<span class="eyebrow">Custom Tooling • Precision Components • OEM Support</span>
+<h1>Custom Precision Tools for Engineering and Medical Device Teams</h1>
 <p>
-Apex Precision Tools designs and supplies high‑performance engineering and medical tools for hospitals, OEM manufacturers, laboratories, and advanced technology teams.
+Apex Precision Tools designs and supplies fixtures, precision components, and custom tooling for OEM manufacturers, laboratories, hospitals, and technical teams working in high-performance environments.
 </p>
 
 <div class="hero-buttons">
 <a class="btn btn-primary" href="#contact">Start a Project</a>
-<a class="btn" style="border:1px solid var(--border);background:white" href="#solutions">View Products</a>
+<a class="btn btn-secondary" href="#solutions">View Solutions</a>
+</div>
+
+<div class="hero-stats">
+<div class="stat">
+<strong>Custom</strong>
+<span class="small">Project-driven tooling and component development</span>
+</div>
+<div class="stat">
+<strong>Prototype</strong>
+<span class="small">Support from concept refinement to early validation</span>
+</div>
+<div class="stat">
+<strong>Production</strong>
+<span class="small">Scalable supply planning for repeatable delivery</span>
+</div>
 </div>
 </div>
 
-<div>
-<img src="https://images.unsplash.com/photo-1581093458791-9d09c5a2c7a3" style="width:100%;border-radius:18px">
+<div class="hero-image">
+<img src="https://images.unsplash.com/photo-1581093458791-9d09c5a2c7a3" alt="Engineering workspace representing precision tool development">
 </div>
 </div>
 
@@ -100,22 +412,65 @@ Apex Precision Tools designs and supplies high‑performance engineering and med
 </div>
 
 <div class="card">
-<h3>Medical Instruments</h3>
-<p>Specialized tools and device components designed for clinical environments and medical technology developers.</p>
+<h3>Medical Device Support</h3>
+<p>Specialized components and technical tooling for medical device development, laboratory workflows, and clinical technology teams.</p>
 </div>
 
 <div class="card">
 <h3>Custom Design</h3>
-<p>Collaborative product development including CAD design, prototyping strategy, and manufacturable engineering.</p>
+<p>Collaborative development including CAD-based design support, prototype refinement, and manufacturable engineering solutions.</p>
 </div>
 
+</div>
+</section>
+
+<section class="section" id="capabilities">
+<div class="container">
+<h2>Engineering Capabilities</h2>
+<p class="section-intro">
+Apex supports technical buyers and development teams with practical engineering services focused on precision, manufacturability, and dependable supply.
+</p>
+
+<div class="card-grid">
+<div class="card">
+<h3>Precision Machining</h3>
+<p>High-accuracy machined parts and assemblies for demanding engineering applications and custom product builds.</p>
+</div>
+<div class="card">
+<h3>Fixture & Tool Design</h3>
+<p>Custom fixtures, jigs, alignment tools, and inspection aids developed around specific production or laboratory requirements.</p>
+</div>
+<div class="card">
+<h3>Prototype Development</h3>
+<p>Support for concept refinement, iterative prototyping, and transition planning toward production-ready solutions.</p>
+</div>
+</div>
+
+<div class="feature-list">
+<div class="feature-item">
+<h4>Typical Applications</h4>
+<p>Alignment fixtures, inspection gauges, calibration tools, precision assembly aids, and custom technical components.</p>
+</div>
+<div class="feature-item">
+<h4>Industries Served</h4>
+<p>Medical device teams, engineering laboratories, OEM manufacturers, technical procurement groups, and advanced product developers.</p>
+</div>
+<div class="feature-item">
+<h4>Project Support</h4>
+<p>Design discussions, RFQ review, manufacturability feedback, and supply planning for ongoing production needs.</p>
+</div>
+<div class="feature-item">
+<h4>Commercial Focus</h4>
+<p>Built for buyers who value reliable communication, engineering collaboration, and practical delivery support.</p>
+</div>
+</div>
 </div>
 </section>
 
 <section class="section" id="solutions">
 <div class="container">
 <h2>Core Solutions</h2>
-<p>Explore the main product and service areas offered by Apex Precision Tools.</p>
+<p class="section-intro">Explore the main product and service areas offered by Apex Precision Tools.</p>
 
 <div class="card-grid">
 <div class="card">
@@ -124,7 +479,7 @@ Apex Precision Tools designs and supplies high‑performance engineering and med
 </div>
 <div class="card">
 <h3>Medical Instrument Components</h3>
-<p>Component systems and specialized tools for medical device teams, labs, and clinical applications.</p>
+<p>Component systems and specialized tooling support for medical device teams, laboratories, and technical applications.</p>
 </div>
 <div class="card">
 <h3>Prototype to Production</h3>
@@ -134,100 +489,29 @@ Apex Precision Tools designs and supplies high‑performance engineering and med
 </div>
 </section>
 
-<section class="section" id="process">
+<section class="section">
 <div class="container">
-<h2>Our Engineering Process</h2>
-<p>A clear path from concept to reliable production supply.</p>
+<h2>Why Apex Precision Tools</h2>
+<p class="section-intro">
+Buyers and engineering teams need more than generic supply. Apex is positioned to support practical, high-precision development work with responsive collaboration and project-focused execution.
+</p>
 
 <div class="process">
-
 <div>
-<h4>1. Requirements</h4>
-<p>Understand application requirements, materials, and constraints.</p>
-</div>
-
-<div>
-<h4>2. Design</h4>
-<p>CAD modelling and concept refinement with manufacturing considerations.</p>
+<h4>Engineering Focus</h4>
+<p>Tools and components developed for technical environments where precision, consistency, and reliability matter.</p>
 </div>
 
 <div>
-<h4>3. Prototype</h4>
-<p>Testing and iterative improvements before production.</p>
+<h4>Custom Solutions</h4>
+<p>Project-specific support for unique geometries, workflows, tooling needs, and OEM application requirements.</p>
 </div>
 
 <div>
-<h4>4. Production</h4>
-<p>Scalable manufacturing and long‑term supply support.</p>
+<h4>Prototype to Production</h4>
+<p>Aligned support from early-stage development through scalable manufacturing and ongoing supply.</p>
 </div>
 
-</div>
-</div>
-</section>
-
-<section class="section" id="industries">
-<div class="container">
-<h2>Industries We Support</h2>
-<p>Our tools support high‑precision environments where reliability and accuracy are critical.</p>
-
-<div class="card-grid">
-
-<div class="card">
-<h3>Hospitals & Clinics</h3>
-<p>Procedure tools and medical device components.</p>
-</div>
-
-<div class="card">
-<h3>Medical Device OEMs</h3>
-<p>Design support and component manufacturing for device developers.</p>
-</div>
-
-<div class="card">
-<h3>Engineering Labs</h3>
-<p>Testing fixtures, calibration tools, and precision assemblies.</p>
-</div>
-
-</div>
-
-<div class="cta">
-<h2>Partner with Apex Precision Tools</h2>
-<p>Discuss product requirements, engineering challenges, or custom tool development with our team.</p>
-<br>
-<a class="btn" style="background:white;color:#0f2a44" href="#contact">Request Consultation</a>
-</div>
-
-</div>
-</section>
-
-<section class="section" id="contact">
-<div class="container">
-<h2>Contact Apex Precision Tools</h2>
-<p>Use this section for RFQs, custom design discussions, OEM partnerships, or product sourcing requests.</p>
-<div class="card-grid">
-<div class="card">
-<h3>Request a Quote</h3>
-<p>Email: erdogangok51@gmail.com</p>
-<p>Typical use: pricing, lead times, product availability.</p>
-</div>
-<div class="card">
-<h3>Discuss a Design Project</h3>
-<p>Email: erdogangok51@gmail.com</p>
-<p>Typical use: custom tools, prototyping, design refinement.</p>
-</div>
-<div class="card">
-<h3>Email Contact</h3>
-<p>Email: erdogangok51@gmail.com</p>
-<p>Contact us for partnerships, product sourcing, or custom engineering discussions.</p>
-</div>
-</div>
-</div>
-</section>
-
-<footer>
-<div class="container">
-© 2026 Apex Precision Tools — Engineering and Medical Instrument Solutions
-</div>
-</footer>
-
-</body>
-</html>
+<div>
+<h4>Direct Collaboration</h4>
+<p>
